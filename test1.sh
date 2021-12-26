@@ -29,6 +29,4 @@ passwd
 pacman -S grub efibootmgr dhcpcd dhclient networkmanager --noconfirm --needed
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
-exit
-umount -R /mnt
-reboot
+
