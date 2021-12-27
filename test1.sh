@@ -24,6 +24,8 @@ echo "::1 localhost" >> /etc/hosts
 echo "127.0.0.1 scorp.localhost scorp" >> /etc/hosts
 
 mkinitcpio -P
+
+echo 'Passwd root user'
 passwd
 
 pacman -S grub efibootmgr dhcpcd dhclient networkmanager --noconfirm --needed
