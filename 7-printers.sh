@@ -10,16 +10,16 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING AUDIO COMPONENTS"
+echo "INSTALLING PRINTER DRIVERS"
 echo
 
 PKGS=(
-            'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
-            'alsa-plugins'      # ALSA plugins
-            'pulseaudio'        # Pulse Audio sound components
-            'pulseaudio-alsa'   # ALSA configuration for pulse audio
-            'pavucontrol'       # Pulse Audio volume control
-            'volumeicon'        # System tray volume control
+    'cups'                  # Open source printer drivers
+    'cups-pdf'              # PDF support for cups
+    'ghostscript'           # PostScript interpreter
+    'gsfonts'               # Adobe Postscript replacement fonts
+    'hplip'                 # HP Drivers
+    'system-config-printer' # Printer setup  utility
 )
 
 for PKG in "${PKGS[@]}"; do
