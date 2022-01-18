@@ -30,6 +30,17 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+
+echo 
+echo "Disabling DHCP and enabling Network Manager daempn"
+echo  
+
+sudo systemctl disable dhcpcd.service   
+sudo systemctl stop dhcpcd.service          
+sudo systemctl enable NetworkManager.service           
+sudo systemctl start NetworkManager.service     
+
+
 echo
 echo "Done!"
 echo

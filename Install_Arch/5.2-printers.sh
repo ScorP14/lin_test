@@ -27,6 +27,10 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+echo "Enabling the cups service daemon so we can print"
+systemctl enable org.cups.cupsd.service  
+systemctl start org.cups.cupsd.service
+
 echo
 echo "Done!"
 echo
