@@ -8,6 +8,7 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the preview bar
-DIR="${HOME}/.config/polybar/bars"
-#polybar -q top -c "$DIR"/preview.ini &
-#polybar -q bottom -c "$DIR"/preview.ini &
+DIR="~/.config/polybar/bars"
+polybar -q top -c "$DIR"/preview.ini &
+polybar -q mid -c "$DIR"/preview.ini &
+polybar -q bottom -c "$DIR"/preview.ini &
