@@ -10,12 +10,12 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING I3"
+echo "INSTALLING Displey Manager"
 echo
 
 PKGS=(
-        'i3',
-        'i3-gapp'
+    'ligthdm',
+    'lightdm-gtk-greete'
 )
 
 for PKG in "${PKGS[@]}"; do

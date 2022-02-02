@@ -10,12 +10,12 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING I3"
+echo "INSTALLING XFCE"
 echo
 
 PKGS=(
-        'i3',
-        'i3-gapp'
+        'xfce4'                 # XFCE Desktop
+        'xfce4-goodies'         # All the extras
 )
 
 for PKG in "${PKGS[@]}"; do

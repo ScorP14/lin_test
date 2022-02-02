@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+
 #-------------------------------------------------------------------------
 #  _________                 __________  ____   _____  
 # /   _____/ ____  __________\______   \/_   | /  |  | 
@@ -10,12 +12,16 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING I3"
+echo "INSTALLING XORG"
 echo
 
 PKGS=(
-        'i3',
-        'i3-gapp'
+        'xorg-server'           # XOrg server
+        'xorg-apps'             # XOrg apps group
+        'xorg-xinit'            # XOrg init
+        'xf86-video-intel'      # 2D/3D video driver
+        'mesa'                  # Open source version of OpenGL
+        'xf86-input-libinput'   # Trackpad driver for Dell XPS
 )
 
 for PKG in "${PKGS[@]}"; do

@@ -21,11 +21,14 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
 
+    'bash-completion'       # Tab completion for Bash
     'bc'                    # Precision calculator language
     'bleachbit'             # File deletion utility
     'curl'                  # Remote content retrieval
+    'elinks'                # Terminal based web browser
     'feh'                   # Terminal-based image viewer/manipulator
     'file-roller'           # Archive utility
+    'gnome-keyring'         # System password storage
     'gtop'                  # System monitoring via terminal
     'gufw'                  # Firewall manager
     'hardinfo'              # Hardware info app
@@ -45,9 +48,10 @@ PKGS=(
     'unzip'                 # Zip compression program
     'wget'                  # Remote content retrieval
     'xfce4-terminal'        # Terminal emulator
+    'zenity'                # Display graphical dialog boxes via shell scripts
     'zip'                   # Zip compression program
     'zsh'                   # ZSH shell
-    'neovim'
+    'zsh-completions'       # Tab completion for ZSH
 
     # DISK UTILITIES ------------------------------------------------------
 
@@ -60,10 +64,16 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
 
+    'catfish'               # Filesystem search
     'conky'                 # System information viewer
+    'nemo'                  # Filesystem browser
+    'veracrypt'             # Disc encryption utility
+    'variety'               # Wallpaper changer
+    'xfburn'                # CD burning application
 
     # DEVELOPMENT ---------------------------------------------------------
 
+    'atom'                  # Text editor
     'apache'                # Apache web server
     'clang'                 # C Lang compiler
     'cmake'                 # Cross-platform open-source make system
@@ -75,17 +85,30 @@ PKGS=(
     'meld'                  # File/directory comparison
     'nodejs'                # Javascript runtime environment
     'npm'                   # Node package manager
+    'php'                   # Web application scripting language
+    'php-apache'            # Apache PHP driver
     'postfix'               # SMTP mail server
     'python'                # Scripting language
     'qtcreator'             # C++ cross platform IDE
+    'qt5-examples'          # Project demos for Qt
+    'yarn'                  # Dependency management (Hyper needs this)
 
     # WEB TOOLS -----------------------------------------------------------
 
+    'chromium'              # Web browser
     'firefox'               # Web browser
     'filezilla'             # FTP Client
+    'flashplugin'           # Flash
+
+    # COMMUNICATIONS ------------------------------------------------------
+
+    'hexchat'               # Multi format chat
+    'irssi'                 # Terminal based IIRC
 
     # MEDIA ---------------------------------------------------------------
 
+    'lollypop'              # Music player
+    'simplescreenrecorder'  # Record your screen
     'vlc'                   # Video player
     'xfce4-screenshooter'   # Screen capture.
 

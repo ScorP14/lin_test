@@ -10,18 +10,26 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING I3"
+echo "INSTALLING PRINTER DRIVERS"
 echo
 
 PKGS=(
-        'i3',
-        'i3-gapp'
+    'cups'                  # Open source printer drivers
+    'cups-pdf'              # PDF support for cups
+    'ghostscript'           # PostScript interpreter
+    'gsfonts'               # Adobe Postscript replacement fonts
+    'hplip'                 # HP Drivers
+    'system-config-printer' # Printer setup  utility
 )
 
 for PKG in "${PKGS[@]}"; do
-    echo "INSTALLING: ${PKG}"
+    echo "INSTALLING ${PKG}"
     sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+echo "Enabling the cups service daemon so we can print"
+systemctl enable org.cups.cupsd.service  
+systemctl start org.cups.cupsd.service
 
 echo
 echo "Done!"

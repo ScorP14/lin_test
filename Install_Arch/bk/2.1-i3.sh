@@ -14,8 +14,7 @@ echo "INSTALLING I3"
 echo
 
 PKGS=(
-        'i3',
-        'i3-gapp'
+        'i3'
 )
 
 for PKG in "${PKGS[@]}"; do
