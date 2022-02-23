@@ -55,13 +55,13 @@ set.termguicolors = true      --  24-bit RGB colors
 
 --[[
 cmd'colorscheme onedark'
-cmd'colorscheme oceanic-next'
+cmd'colorscheme OceanicNext'
 cmd'colorscheme meterial'
 cmd'colorscheme ayu'
 cmd'colorscheme gruvbox'
 ]]--
 
-cmd'colorscheme OceanicNext'
+cmd'colorscheme gruvbox'
 
 -----------------------------------------------------------
 -- Табы и отступы
@@ -86,6 +86,19 @@ autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja setlocal 
 ]]
 -- С этой строкой отлично форматирует html файл, который содержит jinja2
 cmd[[ autocmd BufNewFile,BufRead *.html set filetype=htmldjango ]]
+
+
+
+
+
+-----------------------------------------------------------
+-- Xз 
+-----------------------------------------------------------
+
+local g = vim.g
+-- Путь до Python
+g.python3_host_prog = "/usr/bin/python"
+
 
 
 
@@ -130,10 +143,23 @@ local luasnip = require 'luasnip'
 -- nvim-cmp setup
 local cmp = require 'cmp'
 cmp.setup {
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
         end,
+    },
+    -- Авто комплит
+    completion = {
+      autocomplete = false
+    },
+    -- Горячие клавишы
+    mapping = {
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.close()
     },
     sources = {
         { name = 'nvim_lsp' },
