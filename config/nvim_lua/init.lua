@@ -1,15 +1,15 @@
 
-require('plugins')
-require('keymaps')
-require('settings')
---[[
+-- require('plugins')
+-- require('keymaps')
+-- require('settings')
+
 local sources = {
---	"core.options",
-	"core.defaults",
+--	"coptions",
+--	"core.defaults",
 	"settings",
 --	"core.autocmds",
-	"core.plugins",
---	"core.mappings",
+	"plugins",
+	"mappings",
 }
 
 
@@ -20,5 +20,5 @@ for _, source in ipairs(sources) do
 	end
 end
 
-]]--
+
 
