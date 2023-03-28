@@ -1,0 +1,39 @@
+
+pacstrap -i /mnt base base-devel linux linux-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils nano vim dhcpcd dhclient networkmanager --noconfirm
+
+pacstrap -i /mnt base base-devel linux-zen linux-zen-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils nano vim dhcpcd dhclient networkmanager --noconfirm
+   
+pacstrap -i /mnt base base-devel linux-lts linux-lts-headers linux-firmware dosfstools btrfs-progs intel-ucode amd-ucode iucode-tool archlinux-keyring bluez bluez-utils nano vim dhcpcd dhclient networkmanager --noconfirm
+
+
+-> Для установки KDE введите ( 1 ) "
+pacstrap -i /mnt xorg xorg-server xorg-xwayland plasma cups kde-applications kmix discover cups sddm sddm-kcm firefox packagekit-qt5 bluez bluez-utils --noconfirm
+systemctl enable sddm --force
+
+-> Для установки GNOME введите ( 2 ) "
+pacstrap -i /mnt xorg xorg-server gnome cups gnome-extra firefox gdm --noconfirm
+systemctl enable gdm --force
+
+-> Для установки XFCE введите ( 3 ) "
+pacstrap -i /mnt xorg xorg-server xfce4 cups xfce4-goodies lightdm firefox cups lightdm-gtk-greeter pavucontrol gvfs gvfs-mtp thunar-volman network-manager-applet bluez bluez-utils pulseaudio --noconfirm
+systemctl enable lightdm --force
+
+-> Для установки I3 введите ( 4 ) "
+pacstrap -i /mnt xorg xorg-server xorg-xinit cups xdg-utils xdg-user-dirs cups i3-gaps i3blocks i3status dmenu rofi xfce4-terminal firefox nitrogen picom network-manager-applet blueman bluez bluez-utils gvfs gvfs-mtp pcmanfm --noconfirm
+
+
+-> Для установки Lxqt введите ( 5 ) "
+pacstrap -i /mnt xorg xorg-server xdg-user-dirs cups xdg-utils firefox cups pcmanfm lxqt breeze-icons sddm sddm-kcm bluez gvfs gvfs-mtp bluez-utils --noconfirm
+systemctl enable sddm --force
+
+
+
+
+-> Для установки Cinnamon введите ( 8 ) "
+pacstrap -i /mnt cinnamon gnome-terminal parcellite firefox gvfs gvfs-mtp pcmanfm lightdm lightdm-slick-greeter bluez-utils --noconfirm
+systemctl enable lightdm --force
+
+
+-> Для установки MATE введите ( 9 ) "
+pacstrap -i /mnt mate mate-extra dconf-editor lightdm lightdm-slick-greeter gvfs pcmanfm gvfs-mtp bluez bluez-utils --noconfirm
+systemctl enable lightdm --force
