@@ -1,29 +1,3 @@
-# Copyright (c) 2010 Aldo Cortesi
-# Copyright (c) 2010, 2014 dequis
-# Copyright (c) 2012 Randall Ma
-# Copyright (c) 2012-2014 Tycho Andersen
-# Copyright (c) 2012 Craig Barnes
-# Copyright (c) 2013 horsik
-# Copyright (c) 2013 Tao Sauvage
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in
-# all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -53,26 +27,7 @@ def floating_dialogs(window):
         window.floating = True
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 keys = [
-
-    Key([mod], "d", lazy.spawn('rofi -show drun'), desc="Move focus to right"),
-
-
-
-
     Key([mod], "left", lazy.layout.left(), desc="Move focus to left"), # Фокус влево
     Key([mod], "right", lazy.layout.right(), desc="Move focus to right"), # Фокус вправо
     Key([mod], "down", lazy.layout.down(), desc="Move focus down"), # Фокус вниз
@@ -93,16 +48,8 @@ keys = [
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"), # Вернуть все взад
     
     # Запуск приложений
+    Key([mod], "d", lazy.spawn('rofi -show drun'), desc="Move focus to right"),
     Key([mod], "e", lazy.spawn("thunar")),
-
-
-
-
-
-
-
-
-
 
 
     Key(
@@ -124,21 +71,16 @@ keys = [
 
 
 
-groups = [Group(i) for i in "123456789"]
+# groups = [Group(i) for i in "123456789"]
 
 
 
 
 groups = [                                                                 
-    Group("1", label = ""),
-    Group("2", label = ""),
+    Group("1", label = ""),
+    Group("2", label = ""),
     Group("3", label = '"', matches=[Match(wm_class=["firefox"])]),
-    Group("4", label = ""),
-    Group("5", label = ""),
-    Group("6", label = ""),
-    Group("7", label = ""),
-    Group("8", label = ""),
-    Group("9", label = ""),
+    Group("4", label = ""),
 ]                                                        
 
 for i in groups:
