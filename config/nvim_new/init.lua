@@ -5,11 +5,16 @@ local sources = {
   "core.base",
 
 -- Plugins
+  "plugins.bufferline",
   "plugins.treesitter",
   "plugins.lsp",
-  "plugins.comment",
+  "plugins.lualine",
+  -- "plugins.comment",
   "plugins.mason",
+  "plugins.mini_comment",
+  "plugins.mini_diff",
   "plugins.mini_pairs",
+  "plugins.noice",
   "plugins.telescope",
 }
 

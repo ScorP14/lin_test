@@ -11,7 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 require("lazy").setup({
-	{'phaazon/hop.nvim'},
+	{'phaazon/hop.nvim'},  -- Поиск?
 	{
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -43,6 +43,7 @@ require("lazy").setup({
     },
   },
   {
+    -- Панель с информацией от анализатора типов
     "folke/trouble.nvim",
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = "Trouble",
@@ -81,9 +82,7 @@ require("lazy").setup({
   },
 
   -- Форматирование и линтинг
-  {'stevearc/conform.nvim',
-    opts = {},
-  },
+  {'stevearc/conform.nvim'},
   {'mfussenegger/nvim-lint'},
 
 
@@ -94,11 +93,25 @@ require("lazy").setup({
   },
 
 -----------------------------------------------------------
-  {'echasnovski/mini.pairs'}, -- [], '', "", {} ставит парами
-  -- {'echasnovski/mini.diff'}, -- Индикаторы Git 
-  {'numToStr/Comment.nvim'},  -- Коментирует код 
-  -- akinsho/bufferline.nvim  -- Табы вверух
-  -- nvim-lualine/lualine     -- Нижная линия
+  {'echasnovski/mini.pairs'},       -- [], '', "", {} ставит парами
+  {'echasnovski/mini.comment'},     -- Коментарий 
+  {'echasnovski/mini.diff'},        -- Индикаторы Git 
+  {'akinsho/bufferline.nvim'},      -- Табы вверух
+
+
+  {         
+    'nvim-lualine/lualine.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },                                -- Нижная линия
+  {
+    -- TODO НЕ РАБОТАЕТ CTRL + R в python  
+    'folke/noice.nvim', 
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+  },             -- Внешний вид командной строки 
+
 -----------------------------------------------------------
 -- Цветовые схемы 
 -----------------------------------------------------------
