@@ -1,0 +1,27 @@
+base
+base-devel
+
+git
+curl
+wget
+zsh # oh my zsh
+neovim
+telegram-desktop
+
+
+# Developer
+uv
+npm
+docker
+
+visual-studio-code-bin  #  yay
+
+
+
+# Style
+ttf-jetbrains-mono-nerd
+
+neofetch
+firefox
+
+
