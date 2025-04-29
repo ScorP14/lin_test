@@ -1,7 +1,38 @@
 base
 base-devel
+ntfs-3g
+
+linux, linux-headers # linux-zen
+intel-ucode # cpu intel
+
+# Для GPU nvidia
+nvidia
+nvidia-utils
+lib32-nvidia-utils
+nvidia-settings
+
+# Сеть
+networkmanager
+iwd
+wpa_supplicant
+
+# Аудио
+pipewire
+wireplumber
+alsa-utils
+
+bluez
+bluez-utils
+
+xorg-server
+xorg-xinit
+xorg-apps
+
+wayland
+xorx-xwayland
 
 git
+man-db
 curl
 wget
 zsh # oh my zsh
