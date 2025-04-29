@@ -1,0 +1,28 @@
+ZSH_COLOR_175="%F{175}"
+ZSH_COLOR_223="%F{223}"
+ZSH_COLOR_215="%F{215}"
+ZSH_COLOR_RED="%F{red}"
+ZSH_COLOR_GREEN="%F{green}"
+ZSH_RESET="%f"
+
+ZSH_USERNAME="%n"
+ZSH_PWD="%~"
+ZSH_TIME="%*"
+
+ZSH_STATUS="%(?.${ZSH_COLOR_GREEN}✔.${ZSH_COLOR_RED}✘)${ZSH_RESET}"
+
+# Основной prompt (двухстрочный)
+PROMPT='${ZSH_COLOR_175}%B┌─%b${ZSH_USERNAME} ${ZSH_RESET}[${ZSH_COLOR_223}${ZSH_PWD}${ZSH_RESET}] $(git_prompt_info)
+${ZSH_COLOR_175}%B└─%b[${ZSH_RESET}${ZSH_COLOR_215}$% ${ZSH_RESET}${ZSH_COLOR_175}]${ZSH_RESET} '
+
+
+ZSH_THEME_GIT_PROMPT_PREFIX="[${ZSH_COLOR_223}git/"
+ZSH_THEME_GIT_PROMPT_SUFFIX="${ZSH_RESET}"]
+ZSH_THEME_GIT_PROMPT_DIRTY="${ZSH_COLOR_RED} ✘${ZSH_RESET}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+# Правый prompt - время
+RPROMPT='${ZSH_STATUS} [${ZSH_TIME}]'
+
+# Продолжение ввода (PS2) - исправлено
+PS2=$'\e[38;5;175m%B>%b\e[0m '
