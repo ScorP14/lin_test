@@ -106,9 +106,17 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias l="ls"
-alias ll="ls -a"
+#- alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias l="eza --icons=always --sort=type"
+alias ll="eza -a --icons=always --sort=type"
+
+alias lt="eza --tree --level=1 --icons=always --sort=type --long"
+alias llt="eza -a --tree --level=1 --icons=always --sort=type --git --long"
+
+# alias l="ls"
+# alias ll="ls -a"
+
 alias clr="clear"
 alias vi="nvim"
 alias py="python"
