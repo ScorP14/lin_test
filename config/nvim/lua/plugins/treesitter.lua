@@ -1,12 +1,28 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 
-    "python", 
-    "lua", 
-    "html", 
-    "css", 
-    "toml", 
-    "markdown", 
-    "markdown_inline"  
+  ensure_installed = {
+    "python",
+    "lua",
+    "bash",
+
+    "jinja",
+    "html",
+    "css",
+
+    "gitignore",
+    "sql",
+
+    "http",
+    "nginx",
+    "tmux",
+    "vim",
+
+    "json",
+    "ini",
+    "toml",
+    "yaml",
+    "csv",
+    "markdown",
+    "markdown_inline"
 },
 
 

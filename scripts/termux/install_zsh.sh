@@ -19,6 +19,7 @@
 #   echo "Пожалуйста, установите отсутствующие команды и повторите запуск."
 #   return 1
 # fi
+pkg update && pkg upgrade
 pkg install zsh eza git curl wget
 
 DIR="$(dirname "$0")"

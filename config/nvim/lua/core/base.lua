@@ -9,6 +9,7 @@ opt.mouse = 'a'               --Включит мышь
 opt.encoding = 'utf-8'        --Кодировка
 opt.showcmd = true            --Отображение команд
 opt.swapfile = false          --Не создаем свап файлы
+-- opt.clipboard = "unnamedplus" --"unnamed"
 
 -----------------------------------------------------------
 -- ВИЗУАЛЬНЫЕ ОПЦИИ
@@ -20,16 +21,10 @@ opt.tabstop = 2               --1 tab = 2 пробела
 opt.smartindent = true
 opt.shiftwidth = 2            --Смещаем на 4 пробела
 opt.scrolloff = 7             -- Показывать табы вверху со N вкладок
-opt.showtabline=1
+opt.showtabline = 1
 
 opt.termguicolors = true      -- Подержка 24-битных цветов
-
 cmd.colorscheme("catppuccin") -- gruvbox, catppuccin
-
-
-
-
-
 
 opt.so = 5                   --Отступ курсора от края экрана
 opt.foldcolumn = '2'         --Ширина колонки для фолдов
@@ -74,7 +69,4 @@ vim.api.nvim_exec([[
   autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
   augroup end
 ]], false)
-
-
-
 
