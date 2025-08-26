@@ -1,0 +1,76 @@
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  event = "User FilePost",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+  },
+  lazy = false,
+  cmd = "Neotree",
+  opts = {
+    close_if_last_window = true,
+    popup_border_style = "rounded",
+    sources = { "filesystem", "buffers", "git_status" },
+    open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
+    filesystem = {
+      bind_to_cwd = false,
+      follow_current_file = { enabled = true },
+      use_libuv_file_watcher = true,
+    },
+    window = {
+      position = "right",
+      mappings = {
+        ["<F5>"] = "refresh",
+        ["l"] = "open",
+        ["<right>"] = "open",
+        ["h"] = "close_node",
+        ["<left>"] = "close_node",
+        -- ["<space>"] = "none",
+        ["Y"] = {
+          function(state)
+            local node = state.tree:get_node()
+            local path = node:get_id()
+            vim.fn.setreg("+", path, "c")
+          end,
+          desc = "Copy Path to Clipboard",
+        },
+      },
+    },
+    default_component_configs = {
+      indent = {
+        with_expanders = true,
+        expander_collapsed = "",
+        expander_expanded = "",
+        expander_highlight = "NeoTreeExpander",
+      },
+      container = {
+        enable_character_fade = true,
+        modified = {
+          symbol = "✚",
+          highlight = "NeoTreeModified",
+        },
+        name = {
+          trailing_slash = false,
+          use_git_status_colors = true,
+          highlight = "NeoTreeFileName",
+        },
+      },
+      git_status = {
+        symbols = {
+          -- Change type
+          added = "",
+          modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+          deleted = "✖", -- this can only be used in the git_status source
+          renamed = "󰁕", -- this can only be used in the git_status source
+          -- Status type
+          untracked = "",
+          ignored = "",
+          unstaged = "󰄱",
+          staged = "",
+          conflict = "",
+        },
+      },
+    },
+  },
+}
