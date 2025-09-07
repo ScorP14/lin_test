@@ -23,6 +23,7 @@ return {
     -- lazygit = { enabled = true },
     -- gitbrowse = { enabled = true },
     -- image = { enabled = false },
+    picker = { enabled = true },
     notify = { -- OK +-
       enabled = true,
       timeout = 3000,
