@@ -13,7 +13,7 @@ return {
   init_options = {
     settings = {
       lint = {
-        ignore = { "ALL" }
+        -- ignore = { "ALL" }
       },
     },
   },

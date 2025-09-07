@@ -12,6 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+if vim.loader then
+  vim.loader.enable()
+end
+
 require("config.options")
 
 require("lazy").setup({

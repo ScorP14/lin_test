@@ -16,9 +16,9 @@ return {
         opts = {}, -- merged with defaults from documentation
       },
       override = {
-        --["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-        --["vim.lsp.util.stylize_markdown"] = true,
-        --["cmp.entry.get_documentation"] = false,
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = false,
       },
     },
     routes = {

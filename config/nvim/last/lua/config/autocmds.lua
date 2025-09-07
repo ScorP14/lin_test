@@ -1,6 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
 
-
 -- TODO: Fix
 autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
   group = vim.api.nvim_create_augroup("NvFilePost", { clear = true }),
