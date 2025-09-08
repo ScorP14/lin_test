@@ -8,12 +8,14 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
       'L3MON4D3/LuaSnip',
+      "rafamadriz/friendly-snippets",
       'saadparwaiz1/cmp_luasnip',
+      "onsails/lspkind.nvim",
 
     },
     config = function()
       local cmp = require('cmp')
-
+      local lspkind = require('lspkind')
       cmp.setup({
         completion = {
           autocomplete = false,
@@ -33,10 +35,32 @@ return {
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = "luasnip" },
-          { name = "path" },
           { name = 'buffer' },
+          { name = "path" },
+          { name = "nvim_lua" },
           { name = "cmdline" },
         }),
+        window = {
+          completion = cmp.config.window.bordered({
+            border = 'rounded',
+          }),
+          documentation = cmp.config.window.bordered({
+            border = 'rounded',
+          }),
+        },
+        formatting = {
+          format = lspkind.cmp_format({
+            mode = "symbol_text",
+            menu = ({
+              buffer = "[Buffer]",
+              nvim_lsp = "[LSP]",
+              luasnip = "[LuaSnip]",
+              nvim_lua = "[Lua]",
+              path = "[Path]",
+              latex_symbols = "[Latex]",
+            })
+          }),
+        },
       })
     end,
   },
