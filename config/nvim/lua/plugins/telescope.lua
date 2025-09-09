@@ -10,12 +10,13 @@ return {
         mappings = {
           i = {
             ["<S-Up>"] = "preview_scrolling_up",
+            ["<S-Left>"] = "preview_scrolling_left",
+            ["<S-Right>"] = "preview_scrolling_right",
             ["<S-Down>"] = "preview_scrolling_down"
           },
           n = {
-            ["<S-Up>"] = "preview_scrolling_up",
-            ["<S-Down>"] = "preview_scrolling_down"
-          },
+            ["D"] = "delete_buffer",
+          }
         },
       },
     }
