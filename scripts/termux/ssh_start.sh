@@ -1,28 +1,29 @@
 #!/bin/bash
 
 SSHD_CONFIG="$HOME/.config/ssh/sshd_config"
-
-cleanup() {
-    pkill sshd
-    echo "Получен сигнал завершения. Останавливаем sshd..."
-    exit 0
-}
-
-trap cleanup SIGINT SIGTERM
-
 if [ ! -f "$SSHD_CONFIG" ]; then
     echo "Ошибка: Не найден конфигурационный файл: $SSHD_CONFIG"
     exit 1
 fi
 
-echo "Запускаем SSH-сервер..."
-echo "Используется конфигурация: $SSHD_CONFIG"
-echo "Для остановки нажмите Ctrl+C"
 
 # -D: Не отключаться от терминала и не демонизироваться
 # -e: Логировать ошибки в stderr вместо syslog
 # -f: Указать путь к конфигурационному файлу
-sshd -D -e -f $SSHD_CONFIG
+sshd -e -f $SSHD_CONFIG &
+SSHD_PID=$!
+echo "Запущен SSH-сервер(PID=$SSHD_PID)..."
+echo "Используется конфигурация: $SSHD_CONFIG"
+echo "Для остановки нажмите Ctrl+C"
 
+cleanup() {
+    echo "Останавливаем sshd..."
+    pkill sshd
+    echo "Успешно остановлен!"
+    exit 0
+}
+
+trap cleanup SIGINT SIGTERM
 # Этот код выполнится только если sshd сам завершится (что маловероятно)
+wait $SSHD_PID
 echo "SSH-сервер завершил работу."
