@@ -18,7 +18,8 @@ echo "Для остановки нажмите Ctrl+C"
 
 cleanup() {
     echo "Останавливаем sshd..."
-    pkill sshd
+    kill $SSHD_PID 
+    wait $SSHD_PID 2>/dev/null
     echo "Успешно остановлен!"
     exit 0
 }
