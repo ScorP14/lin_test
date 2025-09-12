@@ -1,8 +1,8 @@
 return {
   {
     "nvim-tree/nvim-tree.lua",
-    lazy = false,
-    dependencies = {"nvim-tree/nvim-web-devicons"},
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       filters = { dotfiles = false },
       disable_netrw = true,
@@ -38,12 +38,12 @@ return {
       on_attach = function(bufnr)
         local api = require "nvim-tree.api"
         local function opts(desc)
-          return { 
-            desc = "nvim-tree: " .. desc, 
-            buffer = bufnr, 
-            noremap = true, 
-            silent = true, 
-            nowait = true 
+          return {
+            desc = "nvim-tree: " .. desc,
+            buffer = bufnr,
+            noremap = true,
+            silent = true,
+            nowait = true
           }
         end
         api.config.mappings.default_on_attach(bufnr)

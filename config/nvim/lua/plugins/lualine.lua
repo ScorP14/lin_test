@@ -1,5 +1,5 @@
 return {
-  lazy = false,
+  event = "BufRead",
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",

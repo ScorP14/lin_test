@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    lazy = false,
+    event = "VeryLazy",
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
@@ -18,7 +18,8 @@ return {
       local lspkind = require('lspkind')
       cmp.setup({
         completion = {
-          autocomplete = false,
+          keyword_length = 1,
+          completeopt = "menu,noselect",
         },
         snippet = {
           expand = function(args)
@@ -35,7 +36,7 @@ return {
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = "luasnip" },
-          { name = 'buffer' },
+          { name = 'buffer',  keyword_length = 2 },
           { name = "path" },
           { name = "nvim_lua" },
           { name = "cmdline" },

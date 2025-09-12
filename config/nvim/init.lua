@@ -19,13 +19,20 @@ end
 require("config.options")
 
 require("lazy").setup({
+  ui = {
+    border = "rounded",
+    title = "Lazy Plugin Manager",
+    title_pos = "center",
+  },
   defaults = {
-    lazy = true, },
+    lazy = true,
+  },
   spec = {
     { import = "plugins" },
   },
   rocks = {
     enabled = false,
+    hererocks = false,
   },
   checker = { enabled = false, notify = false },
   install = {},
