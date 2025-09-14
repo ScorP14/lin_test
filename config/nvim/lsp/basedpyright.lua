@@ -10,16 +10,11 @@ return {
     'pyrightconfig.json',
     '.git',
   },
+  -- TODO: Улучшить настройку LSP-basedpyright
   settings = {
-    python = {
-      analysis = {
-        -- ignore = { "*" },
-      },
-    },
-
     basedpyright = {
       disableOrganizeImports = true,
-      disableLanguageServices = false,
+      -- disableLanguageServices = false,
 
       analysis = {
         diagnosticSeverityOverrides = {
@@ -41,6 +36,11 @@ return {
         autoImportCompletions = true,
         useLibraryCodeForTypes = true,
         -- diagnosticMode = 'workspace',
+      },
+    },
+    python = {
+      analysis = {
+        ignore = { "*" },
       },
     },
   },

@@ -2,7 +2,6 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     lazy = false,
-    -- event = "VeryLazy",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
       filters = { dotfiles = false },

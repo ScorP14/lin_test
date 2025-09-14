@@ -10,11 +10,17 @@ return {
     'pyrightconfig.json',
     '.git',
   },
+  -- TODO: Улучшить настройку LSP-Ruff
   init_options = {
     settings = {
-      lint = {
-        -- ignore = { "ALL" }
-      },
+      -- args = {
+      --   "--select=E,F,UP,N,I,ASYNC,S,PTH",
+      --   "--line-length=60",
+      --   "--respect-gitignore",
+      -- },
+      -- lint = {
+      --   -- ignore = { "ALL" }
+      -- },
     },
   },
 }
