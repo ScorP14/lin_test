@@ -31,6 +31,13 @@ xorg-apps
 wayland
 xorx-xwayland
 
+# For NeoVim
+zip
+unzip
+tectonic
+fd
+ripgrep
+
 git
 man-db
 curl
