@@ -1,0 +1,99 @@
+[
+  {
+    "clock": {
+      "format": "{:%H:%M %d.%m}",
+      "format-alt": "{:%A, %B %d at %R}"
+    },
+    "height": 30,
+    "hyprland/language": {
+      "format-en": "🇺🇸",
+      "format-ru": "🇷🇺",
+      "min-length": 5,
+      "tooltip": false
+    },
+    "hyprland/workspaces": {
+      "all-outputs": false, //?
+      "disable-scroll": true, //?
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": "󰣇",
+        "3": "",
+        "4": "",
+        "5": "",
+        "magic": "",
+        "default": ""
+      },
+      "persistent-workspaces": {
+        "*": 5
+      },
+      "show-special": true,
+      "special-visible-only": true
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} {volume}% ",
+      "format-icons": {
+        "car": "",
+        "default": [
+          "",
+          ""
+        ],
+        "handsfree": "",
+        "headphones": "",
+        "headset": "",
+        "phone": "",
+        "portable": ""
+      },
+      "format-muted": "",
+      "on-click": "pavucontrol"
+    },
+
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#FFD700'>{icon}</span>{percent}% ",
+      "tooltip": true,
+      "tooltip-format": "当前屏幕亮度: {percent}%",
+      "format-icons": [
+        "<span color='#696969'> 󰃞 </span>",  // 暗 - 深灰
+        "<span color='#A9A9A9'> 󰃝 </span>",  // 中 - 灰
+        "<span color='#FFFF66'> 󰃟 </span>",  // 亮 - 柠檬黄
+        "<span color='#FFD700'> 󰃠 </span>"   // 最亮 - 金色
+      ]
+    },
+    "tray": {
+      "icon-size": 14,
+      "spacing": 1
+    },
+    "network": {
+      "format-wifi": "<span color='#00FFFF'> 󰤨 </span>{essid} ",
+      "format-ethernet": "<span color='#7FFF00'> </span>Wired ",
+      "tooltip-format": "<span color='#FF1493'> 󰅧 </span>{bandwidthUpBytes}  <span color='#00BFFF'> 󰅢 </span>{bandwidthDownBytes}",
+      "format-linked": "<span color='#FFA500'> 󱘖 </span>{ifname} (No IP) ",
+      "format-disconnected": "<span color='#FF4040'>  </span>Disconnected ",
+      "format-alt": "<span color='#00FFFF'> 󰤨 </span>{signalStrength}% ",
+      "interval": 1
+    },
+    // Other
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 0,
+    // Position
+    "modules-right": [
+      "hyprland/language",
+      "pulseaudio",
+      "network",
+      "backlight",
+      "clock",
+      "tray"
+    ],
+    "modules-left": [
+      "hyprland/workspaces",
+    ],
+    "modules-center": [
+      "hyprland/window"
+    ],
+  }
+]
+
